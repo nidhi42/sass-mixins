@@ -1,0 +1,44 @@
+/*importing partial file here*/
+/*sass mixins*/
+p {
+  font-size: 18px; }
+
+.box-panel {
+  width: -webkit-calc(100% - 500px);
+  width: calc(100% - 500px);
+  float: left;
+  padding: 10px;
+  height: 700px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms- flex;
+  display: -webkit- flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -o-align-items: center;
+  align-items: center; }
+  .box-panel .box-content {
+    width: 20%;
+    float: left;
+    padding: 0px 10px 0px 10px; }
+    .box-panel .box-content img {
+      max-width: 100%;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px; }
+
+.sidepanel {
+  width: 500px;
+  float: right; }
+  .sidepanel .panel-header {
+    background: #808080;
+    padding: 20px;
+    border-bottom: 1px solid #ddd; }
+  .sidepanel .panel-body p {
+    font-size: 18px; }

@@ -1,0 +1,3 @@
+﻿using (File.Create(filename)) {
+}
+

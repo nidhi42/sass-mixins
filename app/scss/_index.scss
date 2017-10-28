@@ -1,0 +1,82 @@
+/*sass mixins*/
+$font-base:18px;
+$grey-color:#808080;
+$border-color:#ddd;
+
+//simple on fontsize mixin
+@mixin fontsize{
+    font-size: $font-base;
+}
+
+//padding mixins
+@mixin padding($pads...) {
+    padding: $pads;
+}
+//box content sidebyfloat mixins
+@mixin sidebyfloat($width,$float_value) {
+    width:$width;
+    float:$float_value;
+}
+//calc width mixins ;
+@mixin calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+//border radius mixins
+@mixin border-radius($radius){
+    -webkit-border-radius:$radius;
+    -moz-border-radius:$radius;
+    -ms-border-radius:$radius;
+    -o-border-radius:$radius;
+
+}
+//flex mixins
+@mixin flexstyle($value,$justify-content,$align-content){
+      display: -webkit-box;
+        display: -moz-box;
+      display: -ms-$value;
+      display: -webkit-$value;
+      display: $value;
+    -webkit-justify-content:$justify-content;
+    -moz-justify-content:$justify-content;
+    -ms-justify-content:$justify-content;
+    justify-content:$justify-content;
+    -webkit-align-items:$align-content;
+    -moz-align-items:$align-content;
+    -o-align-items:$align-content;
+    align-items:$align-content;
+}
+
+p {
+   @include fontsize;
+}
+.box-panel {
+    @include calc(width, "100% - 500px");
+    float:left;
+    @include padding(10px);
+    height:700px;
+    @include flexstyle(flex,center,center);
+    .box-content {
+       @include sidebyfloat(20%,left);
+       @include padding(0px 10px 0px 10px);
+       img{
+           max-width:100%;
+           @include border-radius(10px);
+       }
+    }
+}
+.sidepanel {
+    width:500px;
+    float:right;
+    .panel-header {
+        background:$grey-color;
+        @include padding(20px);
+        border-bottom:1px solid $border-color;
+    }
+    .panel-body {
+        p{
+            @include fontsize;
+        }
+
+    }
+}
